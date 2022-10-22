@@ -52,7 +52,7 @@ export const Card = ({gameTime, homeTeam, awayTeam, gameId, homeTeamScore, awayT
             <form className='flex w-full space-x-4 justify-center items-center '>
 
                 <span className='uppercase'>{homeTeam}</span>
-                <img src={`~/../public/images/flags/${homeTeam}.png`} alt="" />
+                <img src={`../../../../public/images/flags/${homeTeam}.png`} alt="" />
 
                 <input 
                 className='bg-red-700/[0.20] w-[55px] h-[55px] text-red-700 text-xl text-center font-bold' 
@@ -76,7 +76,7 @@ export const Card = ({gameTime, homeTeam, awayTeam, gameId, homeTeamScore, awayT
                 disabled={disabled}       
                 />                   
 
-                <img src={`~/../public/images/flags/${awayTeam}.png`} alt="" />
+                <img src={`../../../../public/images/flags/${awayTeam}.png`} alt="" />
                 <span className='uppercase'>{awayTeam}</span>                          
 
             </form> 
