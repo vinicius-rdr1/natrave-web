@@ -11,7 +11,7 @@ import {Icon, Input} from '~/components'
 
 const validationSchema = yup.object().shape({
    name: yup.string().required('Preencha seu nome'),
-   username: yup.string().matches(/^[aA-zZ\s]+$/, "Este campo não aceita caracteres especiais!").required('Preencha seu nome de usuario'),
+   username: yup.string().matches(/^[aA-zZ/1-9\s]+$/, "Este campo não aceita caracteres especiais!").required('Preencha seu nome de usuario'),
    email: yup.string().email('Coloque um e-mail valido').required('Preencha seu e-mail'),
    password: yup.string().required('Preencha sua senha'),
 
