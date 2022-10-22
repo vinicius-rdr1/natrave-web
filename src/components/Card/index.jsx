@@ -59,7 +59,7 @@ export const Card = ({gameTime, homeTeam, awayTeam, gameId, homeTeamScore, awayT
                 type="number" 
                 name="homeTeamScore"
                 value={formik.values.homeTeamScore} 
-                onChange={formik.handleChange}   
+                onChange={formik.handleChange}
                 onBlur={formik.handleSubmit}
                 disabled={disabled}              
                 />
