@@ -52,8 +52,7 @@ export const Dashboard = () => {
     }, [])
 
     useEffect(() => {
-        fetchGames({ gameTime: currentDate }),
-        fetchHunches()
+        fetchGames({ gameTime: currentDate })
         
     }, [currentDate])
 
