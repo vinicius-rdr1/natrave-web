@@ -20,7 +20,7 @@ export function Home() {
       <div className="container max-w-5xl flex-1 p-4 text-white flex flex-col items-center space-y-4 md:space-y-0 md:space-x-4 md:flex-row">
 
         <div className="md:flex-1 flex justify-center">
-          <img src="../assets-natrave/imagem/img.png" alt="" className="w-full max-w-md"/>
+          <img src="/img.png" alt="" className="w-full max-w-md"/>
         </div>
         
         <div className="flex flex-col space-y-6 md:flex-1 p-4">

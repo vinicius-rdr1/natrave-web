@@ -65,7 +65,7 @@ export const Dashboard = () => {
         <>
             <header className='bg-red-500 text-white p-4'>
                 <div className=" container max-w-3xl  flex justify-between">
-                    <img src="../assets-natrave/logo/logo-fundo-vermelho.svg" alt="" className="md:w-50 w-40 p-4"/>
+                    <img src="/logo/logo-fundo-vermelho.svg" alt="" className="md:w-50 w-40 p-4"/>
                     <a href={`/${ auth?.user?.username }`}><Icon name="profile" className="w-10"/></a>
                 </div>
             </header>
