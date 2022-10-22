@@ -17,7 +17,7 @@ export const Card = ({gameTime, homeTeam, awayTeam, gameId, homeTeamScore, awayT
         onSubmit: (values) => {
             axios({
                 method:'post',
-                baseURL: import.meta.env.VITE_API_URL,
+                baseURL: 'http://localhost:3000',
                 url:'/hunches',
                 headers: {
                     Authorization: `Bearer ${auth.accessToken}`
@@ -25,10 +25,13 @@ export const Card = ({gameTime, homeTeam, awayTeam, gameId, homeTeamScore, awayT
                 data: {
                     ...values, 
                     gameId
-                }               
+                }
+
+                
 
                 
             })
+
             
         },
         initialValues: {
