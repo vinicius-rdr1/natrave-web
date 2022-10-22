@@ -11,16 +11,18 @@ import {Icon, Input} from '~/components'
 
 const validationSchema = yup.object().shape({
    name: yup.string().required('Preencha seu nome'),
-   username: yup.string().required('Preencha seu nome de usuario'),
+   username: yup.string().matches(/^[aA-zZ\s]+$/, "Este campo não aceita caracteres especiais!").required('Preencha seu nome de usuario'),
    email: yup.string().email('Coloque um e-mail valido').required('Preencha seu e-mail'),
    password: yup.string().required('Preencha sua senha'),
 
   });
 
-export const Signup = () => {   
+export const Signup = () => {  
+    
+    const [auth, setAuth] = useLocalStorage ("auth", {})   
     const formik = useFormik({
         onSubmit: async (values) => { 
-            console.log(values)
+        
 
             const res = await axios({
                 
@@ -29,8 +31,22 @@ export const Signup = () => {
                 url: "/users",
                 data: values,
                 
-            })      
-            window.localStorage.setItem('auth', JSON.stringify(res.data))     
+            })
+            
+            const login = await axios ({
+                
+                    method: 'get',
+                    baseURL: import.meta.env.VITE_API_URL,
+                    url: '/Login',
+                    auth: {
+                        username: values.email,
+                        password: values.password,
+                    }
+                
+            })
+
+            setAuth(login.data)
+            window.localStorage.setItem('auth', JSON.stringify(login.data))     
 
 
         },  
@@ -44,6 +60,10 @@ export const Signup = () => {
                     
         
     });   
+
+    if(auth?.user?.id){
+        return <Navigate to="/dashboard" replace={true}/>
+    }
 
    
 

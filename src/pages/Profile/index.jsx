@@ -76,7 +76,7 @@ export const Profile = () => {
     return(
         <>
             <header className='bg-red-500 text-white p-4'>
-                <div className=" container max-w-3xl  flex justify-between">
+                <div className=" container max-w-3xl  flex justify-between items-center ">
                     <img src="/logo/logo-fundo-vermelho.svg" alt="" className="md:w-50 w-40 p-4"/>
                     {auth?.user?.id && (<div onClick={logout} className="p-2 cursor-pointer">
                         Sair
@@ -87,7 +87,7 @@ export const Profile = () => {
 
                 <main className='space-y-6'>
                     <section id="header" className='bg-red-500 text-white p-4 space-y-4'>
-                        <div className="bg-red-500 container max-w-3xl space-y-4">
+                        <div className="bg-red-500 container max-w-3xl space-6 flex items-center gap-4">
                             <a href="/Dashboard"><Icon name="arrowBack" className="w-10"/></a>
                             <h3 className='text-2xl font-bold'>{ hunches?.value?.name1 }</h3>
                         </div>
