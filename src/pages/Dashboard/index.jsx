@@ -72,6 +72,7 @@ export const Dashboard = () => {
             </header>
 
                 <main className='space-y-6'>
+                    
                     <section id="header" className='bg-red-500 text-white p-4'>
                         <div className="bg-red-500 container max-w-3xl space-y-2">
                             <span>Olá { auth.user.name }</span>
@@ -79,31 +80,33 @@ export const Dashboard = () => {
                         </div>
                     </section>
 
+                    <div className='container max-w-3xl  flex justify-between'>
 
-                    <section id="content" className='p-2 container max-w-3x space-y-4'>                        
 
-                        <DateSelect currentDate={currentDate} onChange={setDate} />
+                        <section id="content" className='p-2 container max-w-3x space-y-4'>                        
 
-                        <div id="cardList" className='space-y-4'>
+                            <DateSelect currentDate={currentDate} onChange={setDate} />
 
-                            {isLoading && 'Carregando jogos...'}
-                            {hasError && 'Ops! Algo deu errado.'}                            
+                            <div id="cardList" className='space-y-4'>
 
-                            {isDone && games.value?.map(game => (
-                                <Card 
-                                    key={game.id}
-                                    gameId={game.id}
-                                    homeTeam={game.homeTeam}
-                                    awayTeam={game.awayTeam}
-                                    gameTime={format(new Date(game.gameTime), "HH:mm")}
-                                    homeTeamScore={hunches.value?.hunches?.[game.id]?.homeTeamScore || ''}
-                                    awayTeamScore={hunches.value?.hunches?.[game.id]?.awayTeamScore || ''}
+                                {isLoading && 'Carregando jogos...'}
+                                {hasError && 'Ops! Algo deu errado.'}                            
 
-                                />
-                            ))}    
+                                {isDone && games.value?.map(game => (
+                                    <Card 
+                                        key={game.id}
+                                        gameId={game.id}
+                                        homeTeam={game.homeTeam}
+                                        awayTeam={game.awayTeam}
+                                        gameTime={format(new Date(game.gameTime), "HH:mm")}
+                                        homeTeamScore={hunches.value?.hunches?.[game.id]?.homeTeamScore}
+                                        awayTeamScore={hunches.value?.hunches?.[game.id]?.awayTeamScore}                                       
+                                    />
+                                ))}    
 
-                        </div> 
-                    </section>
+                            </div> 
+                        </section>
+                    </div>
                 </main>          
             
         </> 

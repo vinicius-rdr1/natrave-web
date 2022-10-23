@@ -4,9 +4,10 @@ import * as yup from 'yup';
 import { useLocalStorage } from 'react-use'
 
 const validationSchema = yup.object().shape({
-    homeTeamScore: yup.string().required(),
-    awayTeamScore: yup.string().required()
+    homeTeamScore: yup.number().integer("coloque um numero valido").min(0,"O seu palpite não pode ser menor do que Zero"),
+    awayTeamScore: yup.number().integer("coloque um numero valido").min(0, "O seu palpite não pode ser menor do que Zero")
 })
+
 
 
 export const Card = ({gameTime, homeTeam, awayTeam, gameId, homeTeamScore, awayTeamScore, disabled}) => {
@@ -30,7 +31,7 @@ export const Card = ({gameTime, homeTeam, awayTeam, gameId, homeTeamScore, awayT
                 
 
                 
-            })
+            })            
 
             
         },
@@ -77,9 +78,10 @@ export const Card = ({gameTime, homeTeam, awayTeam, gameId, homeTeamScore, awayT
                 />                   
 
                 <img src={`/images/flags/${awayTeam}.png`} alt="" />
-                <span className='uppercase'>{awayTeam}</span>                          
+                <span className='uppercase'>{awayTeam}</span>                                     
 
-            </form> 
+            </form>
+            <span className="p-2 text-sm text-red-700">{formik.errors.homeTeamScore || formik.errors.awayTeamScore}</span> 
 
         </div>                   
 )
