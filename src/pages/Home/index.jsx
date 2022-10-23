@@ -11,7 +11,7 @@ export function Home() {
     }
   
   return (
-    <div className="w-screen  bg-red-300 flex flex-col items-center md:w-full">
+    <div className="w-screen  md:h-screen  bg-red-300 flex flex-col items-center">
       <header className="container max-w-6xl p-4 flex justify-center">
         <img src="/logo/logo-fundo-vinho.svg" alt="" className="md:w-50 w-40 p-4"/>
       </header>
