@@ -93,40 +93,44 @@ export const Profile = () => {
                         </div>
                     </section>
 
+                        <div className='container max-w-3xl  flex justify-between'>
 
-                    <section id="content" className='p-2 container max-w-3x space-y-6'>
-                        
-                        <div>
-                            <h2 className='text-xl font-bold text-red-500'>Seus palpites</h2>
-                        </div>
 
-                        <DateSelect currentDate={currentDate} onChange={setDate} />
-
-                        <div id="cardList" className='space-y-4'>
-
-                            {isLoading && 'Carregando jogos...'}
-                            {hasError && 'Ops! Algo deu errado.'}
-
+                        <section id="content" className='p-2 container max-w-3x space-y-6'>
                             
+                            <div>
+                                <h2 className='text-xl font-bold text-red-500'>Seus palpites</h2>
+                            </div>
 
-                            {isDone && games.value?.map(game => (
-                                <Card 
-                                    key={game.id}
-                                    gameId={game.id}
-                                    homeTeam={game.homeTeam}
-                                    awayTeam={game.awayTeam}
-                                    gameTime={format(new Date(game.gameTime), "HH:mm")}
-                                    homeTeamScore={hunches?.value?.hunches?.[game.id]?.homeTeamScore || '0'}
-                                    awayTeamScore={hunches?.value?.hunches?.[game.id]?.awayTeamScore || '0'}
-                                    disabled={true}
+                            <DateSelect currentDate={currentDate} onChange={setDate} />
 
-                                />
-                            ))}    
+                            <div id="cardList" className='space-y-4'>
 
-                        </div>                         
-                    
+                                {isLoading && 'Carregando jogos...'}
+                                {hasError && 'Ops! Algo deu errado.'}
 
-                    </section>
+                                
+
+                                {isDone && games.value?.map(game => (
+                                    <Card 
+                                        key={game.id}
+                                        gameId={game.id}
+                                        homeTeam={game.homeTeam}
+                                        awayTeam={game.awayTeam}
+                                        gameTime={format(new Date(game.gameTime), "HH:mm")}
+                                        homeTeamScore={hunches?.value?.hunches?.[game.id]?.homeTeamScore || '0'}
+                                        awayTeamScore={hunches?.value?.hunches?.[game.id]?.awayTeamScore || '0'}
+                                        disabled={true}
+
+                                    />
+                                ))}    
+
+                            </div>                         
+                        
+
+                        </section>
+
+                    </div>
                 </main>
             
             

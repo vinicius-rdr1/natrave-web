@@ -59,7 +59,7 @@ export const Card = ({gameTime, homeTeam, awayTeam, gameId, homeTeamScore, awayT
                 className='bg-red-700/[0.20] w-[55px] h-[55px] text-red-700 text-xl rounded text-center font-bold' 
                 type="number" 
                 name="homeTeamScore"
-                value={formik.values.homeTeamScore} 
+                value={formik.values.homeTeamScore == '' ? formik.values.homeTeamScore = 0 : formik.values.homeTeamScore} 
                 onChange={formik.handleChange}
                 onBlur={formik.handleSubmit}
                 disabled={disabled}              
@@ -71,7 +71,7 @@ export const Card = ({gameTime, homeTeam, awayTeam, gameId, homeTeamScore, awayT
                 className='bg-red-700/[0.20] w-[55px] h-[55px] rounded text-red-700 text-xl text-center font-bold'
                 type="number" 
                 name='awayTeamScore'
-                value={formik.values.awayTeamScore}  
+                value={formik.values.awayTeamScore == '' ? formik.values.awayTeamScore = 0 : formik.values.awayTeamScore}  
                 onChange={formik.handleChange}
                 onBlur={formik.handleSubmit}
                 disabled={disabled}       
