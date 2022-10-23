@@ -50,13 +50,13 @@ export const Card = ({gameTime, homeTeam, awayTeam, gameId, homeTeamScore, awayT
             <span className='text-xs md:text-base text-gray-300 font-bold'>{ gameTime }</span>
 
 
-            <form className='flex w-full space-x-4 justify-center items-center '>
+            <form className='flex w-full space-x-2 md:space-x-4 justify-center items-center '>
 
                 <span className='uppercase'>{homeTeam}</span>
                 <img src={`/images/flags/${homeTeam}.png`} alt="" />
 
                 <input 
-                className='bg-red-700/[0.20] w-[55px] h-[55px] text-red-700 text-xl text-center font-bold' 
+                className='bg-red-700/[0.20] w-[55px] h-[55px] text-red-700 text-xl rounded text-center font-bold' 
                 type="number" 
                 name="homeTeamScore"
                 value={formik.values.homeTeamScore} 
@@ -65,10 +65,10 @@ export const Card = ({gameTime, homeTeam, awayTeam, gameId, homeTeamScore, awayT
                 disabled={disabled}              
                 />
 
-                <span className='mx-4 text-red-500 font-bold'>X</span>
+                <span className='md:mx-4  mx-2 text-red-500 font-bold'>X</span>
 
                 <input 
-                className='bg-red-700/[0.20] w-[55px] h-[55px] text-red-700 text-xl text-center font-bold'
+                className='bg-red-700/[0.20] w-[55px] h-[55px] rounded text-red-700 text-xl text-center font-bold'
                 type="number" 
                 name='awayTeamScore'
                 value={formik.values.awayTeamScore}  
