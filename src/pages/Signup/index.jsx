@@ -74,7 +74,7 @@ export const Signup = () => {
             <div>
                 <header className=" p-4  border-b border-red-300">
                     <div className="container max-w-xl flex justify-center">
-                        <img src="../assets-natrave/logo/logo-fundo-branco.svg" alt="" className="md:w-40 w-32 p-4"/>
+                        <img src="/logo/logo-fundo-branco.svg" alt="" className="md:w-40 w-32 p-4"/>
                     </div>
                     
                 </header>
